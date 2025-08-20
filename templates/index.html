@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMRAD Diagnostics - AI-Powered Medical Imaging</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <span class="logo-text">OMRAD</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>Advanced Medical Imaging</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-main">OMRAD Diagnostics</span>
+                    <span class="title-subtitle">AI-Powered Medical Imaging</span>
+                </h1>
+                <p class="hero-description">
+                    Revolutionizing medical diagnosis with cutting-edge artificial intelligence technology. 
+                    Upload your X-ray images for instant, accurate analysis powered by advanced machine learning algorithms.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">99.7%</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Available</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">< 30s</div>
+                        <div class="stat-label">Analysis Time</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="medical-cross">
+                    <div class="cross-horizontal"></div>
+                    <div class="cross-vertical"></div>
+                </div>
+                <div class="pulse-rings">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">X-Ray Analysis</h2>
+                <p class="section-subtitle">Upload your X-ray image for instant AI-powered diagnosis</p>
+            </div>
+            
+            <div class="upload-container">
+                <div class="upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h3 class="upload-title">Drop your X-ray image here</h3>
+                            <p class="upload-text">or <span class="upload-browse">browse files</span></p>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                            <div class="upload-formats">
+                                <span>Supported formats: JPG, PNG, DICOM</span>
+                            </div>
+                        </div>
+                        <div class="upload-progress" id="uploadProgress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-text" id="progressText">Uploading...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container" id="resultsContainer">
+                <div class="results-grid">
+                    <div class="image-preview-card">
+                        <div class="card-header">
+                            <h3>Uploaded Image</h3>
+                            <div class="image-info">
+                                <span id="imageInfo"></span>
+                            </div>
+                        </div>
+                        <div class="image-preview" id="imagePreview">
+                            <img id="previewImg" alt="X-ray preview">
+                        </div>
+                    </div>
+                    
+                    <div class="diagnosis-card">
+                        <div class="card-header">
+                            <h3>AI Diagnosis Report</h3>
+                            <div class="analysis-badge">
+                                <i class="fas fa-robot"></i>
+                                <span>AI Powered</span>
+                            </div>
+                        </div>
+                        <div class="diagnosis-content" id="diagnosisContent">
+                            <div class="diagnosis-loading">
+                                <div class="loading-spinner"></div>
+                                <span>Analyzing image...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose OMRAD?</h2>
+                <p class="section-subtitle">Advanced technology meets medical expertise</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Analysis</h3>
+                    <p class="feature-description">
+                        State-of-the-art machine learning algorithms trained on millions of medical images for accurate diagnosis.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">HIPAA Compliant</h3>
+                    <p class="feature-description">
+                        Your medical data is protected with enterprise-grade security and full HIPAA compliance.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Instant Results</h3>
+                    <p class="feature-description">
+                        Get detailed analysis reports in under 30 seconds, enabling faster treatment decisions.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Validation</h3>
+                    <p class="feature-description">
+                        All AI diagnoses are reviewed by certified radiologists to ensure maximum accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Ready to revolutionize your medical imaging workflow? Contact us today.</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@omraddiagnostics.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Medical Center Drive, Healthcare City</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container">
+                        <div class="logo-icon">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <span class="logo-text">OMRAD Diagnostics</span>
+                    </div>
+                    <p>AI-Powered Medical Imaging Solutions</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">X-Ray Analysis</a></li>
+                            <li><a href="#">CT Scan Review</a></li>
+                            <li><a href="#">MRI Analysis</a></li>
+                            <li><a href="#">Ultrasound</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Partners</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 OMRAD Diagnostics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
