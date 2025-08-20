@@ -6,7 +6,7 @@ Everything (UI, API, model inference, storage) is prebuilt and wired together. T
 > This README focuses on *what the project is* and *how to run it* (single command deployment).
 
 ---
-
+y
 ## What this project is
 
 * **Single-user, offline-capable medical imaging app** (designed for local deployment on a Raspberry Pi or any server).
